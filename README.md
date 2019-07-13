@@ -16,38 +16,25 @@ This repo demonstrates the approach using the Arduino tutorial for [building lib
 
 # Example Output
 
+Since each test is a separate target/binary we can run them in parallel
+
 ```text
+$ make -j10 test
 Building Morse.o...
 Building mocks/Arduino.o...
-
-  # DashTogglesLight.test...
-
+Validating we waited four times... [OK]
+Validating first wait less than second... [OK]
 Validating pin was toggled... [OK]
 Validating pin was set high first... [OK]
 Validating pin was then set low... [OK]
 Validating we waited twice... [OK]
-
-
-  # DotDashDuration.test...
-
-Validating we waited four times... [OK]
-Validating first wait less than second... [OK]
-
-
-  # MorseSetsPinMode.test...
-
+Validating pin was toggled... [OK]
+Validating pin was set high first... [OK]
+Validating pin was then set low... [OK]
+Validating we waited twice... [OK]
 Validating pinmode was set to 0... [OK]
 Validating pinmode was set to 1... [OK]
 Validating pinmode was set to 2... [OK]
-
-
-  # DotTogglesLight.test...
-
-Validating pin was toggled... [OK]
-Validating pin was set high first... [OK]
-Validating pin was then set low... [OK]
-Validating we waited twice... [OK]
-
 +-------------------+
 | All tests passing |
 +-------------------+

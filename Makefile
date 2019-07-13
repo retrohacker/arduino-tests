@@ -40,7 +40,6 @@ verify: index.ino Morse.cpp Morse.h
 		-x c++ ./Morse.cpp
 
 %.test: %.cpp $(TESTS) ./Morse.o $(MOCK_OUTPUT)
-	@echo "\n  # `basename $@`...\n"
 	@gcc \
 		$(CFLAGS) \
 		-o $@ \
@@ -50,7 +49,6 @@ verify: index.ino Morse.cpp Morse.h
 		./Morse.o \
 		-x c++ $<
 	@valgrind --quiet --error-exitcode=1 --tool=memcheck --leak-check=full $@
-	@echo ""
 
 test: $(TEST_OUTPUT)
 	@echo "+-------------------+"
